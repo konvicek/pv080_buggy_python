@@ -23,10 +23,6 @@ class RunBinSh:
         return (subprocess.Popen, (('/bin/sh',),))
 
 def import_urlib_version(version):
-    allowed = set("0123456789.")
-    for char in version:
-        if char not in allowed:
-            return
     exec("import urllib%s as urllib" % version)
 
 @app.route('/')
